@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class GameManager : Singleton<GameManager> {
 
+	public const float RATE = 1.0f;
+
 	[HideInInspector]
 	public bool locationServicesIsRunning = false;
 
@@ -13,9 +15,13 @@ public class GameManager : Singleton<GameManager> {
 	public GameObject player;
 	public GeoPoint playerGeoPosition;
 	public PlayerLocationService player_loc;
+	public float lat;
+	public float lon;
 
 	public enum PlayerStatus { TiedToDevice, FreeFromDevice }
 
+	private ObjectPosition playerPositionObject;
+	private float timeAcum;
 	private PlayerStatus _playerStatus;
 	public PlayerStatus playerStatus
 	{
@@ -32,6 +38,7 @@ public class GameManager : Singleton<GameManager> {
 		newMap.GetComponent<MeshRenderer>().enabled = false;
 		newMap.SetActive (false);
 
+		playerPositionObject = player.GetComponent<ObjectPosition> ();
 	}
 
 	public GoogleStaticMap getMainMapMap () {
@@ -67,9 +74,17 @@ public class GameManager : Singleton<GameManager> {
     }
 
     void Update () {
-		if(!locationServicesIsRunning){
 
-			//TODO: Show location service is not enabled error. 
+		if (SystemInfo.deviceType == DeviceType.Desktop) {
+			timeAcum += Time.deltaTime;
+			if (timeAcum > RATE) {
+				timeAcum -= RATE;
+				playerPositionObject.setPositionOnMap (lat, lon);
+			}
+		}
+
+		if(!locationServicesIsRunning){
+			//TODO: Show location service is not enabled error.
 			return;
 		}
 
@@ -84,8 +99,10 @@ public class GameManager : Singleton<GameManager> {
 		}
 
 
-		var tileCenterMercator = getMainMapMap ().tileCenterMercator (playerGeoPosition);
+//		var tileCenterMercator = getMainMapMap ().tileCenterMercator (playerGeoPosition);
+		var tileCenterMercator = getMainMapMap ().tileCenterMercator (playerPositionObject.getPositionOnMap());
 		if(!getMainMapMap ().centerMercator.isEqual(tileCenterMercator)) {
+			Debug.Log (getMainMapMap().centerMercator.ToString() + ", " + tileCenterMercator.ToString());
 
 			newMap.SetActive(true);
 			getNewMapMap ().initialize ();

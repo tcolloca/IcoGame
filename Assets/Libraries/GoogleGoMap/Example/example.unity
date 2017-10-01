@@ -416,6 +416,8 @@ MonoBehaviour:
   newMap: {fileID: 3831993}
   player: {fileID: 1750993599}
   player_loc: {fileID: 0}
+  lat: -34.45276
+  lon: -58.5228
 --- !u!4 &924367943
 Transform:
   m_ObjectHideFlags: 0
@@ -810,6 +812,7 @@ GameObject:
   - component: {fileID: 1750993607}
   - component: {fileID: 1750993601}
   - component: {fileID: 1750993600}
+  - component: {fileID: 1750993602}
   m_Layer: 0
   m_Name: CapsuleCharacter
   m_TagString: Untagged
@@ -823,7 +826,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1750993599}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7eff946baad04ddfbb99eb4271a2119, type: 3}
   m_Name: 
@@ -848,6 +851,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1750993602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1750993599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ceb39a3ed2059b4188e4ae58d7b73dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 924367942}
+  speed: 0.001
 --- !u!4 &1750993605
 Transform:
   m_ObjectHideFlags: 0

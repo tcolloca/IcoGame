@@ -13,7 +13,7 @@ public class GoogleStaticMap : MonoBehaviour {
 	// To prevent unintentionally sending to many map request to the server
 	// and paying the fee (for instance in a update loop). Set it to zero to
 	// remove the restriction.
-	private const  int MAX_MAP_REQUEST_NUM = 50;
+	private const  int MAX_MAP_REQUEST_NUM = 120;
 	[HideInInspector]
 	public bool isDrawn = false;
 

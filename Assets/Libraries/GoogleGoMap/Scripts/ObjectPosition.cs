@@ -4,15 +4,17 @@ using System.Collections;
 public class ObjectPosition : MonoBehaviour {
 	GoogleStaticMap mainMap;
 
-
 	public float lat_d = 0.0f, lon_d = 0.0f;
 
 	private GeoPoint pos;
-
+	private float timeAcum;
 
 	void Awake (){
 		pos = new GeoPoint ();
 		pos.setLatLon_deg (lat_d, lon_d);
+	}
+
+	void Update() {
 	}
 
 	public void setPositionOnMap () {
@@ -25,4 +27,12 @@ public class ObjectPosition : MonoBehaviour {
 		setPositionOnMap ();
 	}
 
+	public void setPositionOnMap(float lat, float lon) {
+		pos.setLatLon_deg (lat, lon);
+		setPositionOnMap ();
+	}
+
+	public GeoPoint getPositionOnMap() {
+		return pos;
+	}
 }
