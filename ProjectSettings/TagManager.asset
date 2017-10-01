@@ -3,7 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - BallSkin
+  - BallSkinImage
+  - AchievementTitle
+  - AchievementDescription
+  - AchievementImage
+  - Coin
+  - Enemy
+  - FinalScore
+  - GodmodeSphere
+  - Line
+  - Camera
+  - Board
+  - Lives
+  - Score
   layers:
   - Default
   - TransparentFX
@@ -13,9 +27,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Enemies
+  - CenterObstacle
+  - Player
   - 
   - 
   - 

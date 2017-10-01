@@ -4,4 +4,19 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Ice Minigame/Scenes/menu.unity
+    guid: f2823b38c55a0c04fa8bebfd9d4ebdef
+  - enabled: 1
+    path: Assets/Ice Minigame/Scenes/achievements.unity
+    guid: 024541bf9a44ec041bc28f27d8708022
+  - enabled: 1
+    path: Assets/Ice Minigame/Scenes/customize.unity
+    guid: 5b16efe378204eb42a01c1e5beb2d9c8
+  - enabled: 1
+    path: Assets/Ice Minigame/Scenes/game.unity
+    guid: c123abd0ccb477e4c88d5a08c1babd09
+  - enabled: 1
+    path: Assets/Ice Minigame/Scenes/gameOver.unity
+    guid: 9098903a83c50f54cbc3983a32e3c718

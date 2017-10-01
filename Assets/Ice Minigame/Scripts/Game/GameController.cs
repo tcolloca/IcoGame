@@ -14,12 +14,12 @@ public class GameController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		GeneralStats.instance.gamesPlayed++;
+//		GeneralStats.instance.gamesPlayed++;
         scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<Text>();
         livesText = GameObject.FindGameObjectWithTag("Lives").GetComponent<Text>();
 		scoreText.text = gameStats.coins + "";
         livesText.text = playerLives + "";
-		bestScoreText.text = "Best Score: " + GeneralStats.instance.maxCoins;
+//		bestScoreText.text = "Best Score: " + GeneralStats.instance.maxCoins;
         EnemyController.speed = 2f;
     }
 	
@@ -55,7 +55,7 @@ public class GameController : MonoBehaviour {
     private void GameOver()
     {
 		gameStats.gameOver ();
-		GeneralStats.instance.lastGameStats = gameStats;
+//		GeneralStats.instance.lastGameStats = gameStats;
 		SceneManager.LoadScene ("gameOver");
         //TODO: go to after-game scene or return to menu
     }

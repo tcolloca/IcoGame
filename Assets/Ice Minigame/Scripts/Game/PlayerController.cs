@@ -19,10 +19,10 @@ public class PlayerController : MonoBehaviour {
     void Start () {
         rigidBody = GetComponent<Rigidbody>();
         lr = GameObject.FindGameObjectWithTag("Line").GetComponent<LineRenderer>();
-        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Enemies"), LayerMask.NameToLayer("Enemies"), true);
-        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Enemies"), LayerMask.NameToLayer("CenterObstacle"), true);
+		Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Enemies"), LayerMask.NameToLayer("Enemies"), true);
+		Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Enemies"), LayerMask.NameToLayer("CenterObstacle"), true);
         godmodeRenderer = GameObject.FindGameObjectWithTag("GodmodeSphere").GetComponent<MeshRenderer>();
-		GetComponent<MeshRenderer> ().material = GeneralStats.instance.ballMaterial;
+//		GetComponent<MeshRenderer> ().material = GeneralStats.instance.ballMaterial;
 		Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Enemies"), LayerMask.NameToLayer("Player"), false);
     }
 	
