@@ -75,6 +75,8 @@ public class GameManager : Singleton<GameManager> {
 
     void Update () {
 
+		//Este es el codigo que termina posicionando al user de desktop cada RATE segundos en la posicion que indican
+		//las variables lat y lon, las cuales son alteradas por InputController
 		if (SystemInfo.deviceType == DeviceType.Desktop) {
 			timeAcum += Time.deltaTime;
 			if (timeAcum > RATE) {
@@ -99,8 +101,13 @@ public class GameManager : Singleton<GameManager> {
 		}
 
 
-//		var tileCenterMercator = getMainMapMap ().tileCenterMercator (playerGeoPosition);
-		var tileCenterMercator = getMainMapMap ().tileCenterMercator (playerPositionObject.getPositionOnMap());
+		GoogleStaticMap.MyPoint tileCenterMercator;
+		if (SystemInfo.deviceType == DeviceType.Desktop) {
+			tileCenterMercator = getMainMapMap ().tileCenterMercator (playerPositionObject.getPositionOnMap());
+		} else {
+			tileCenterMercator = getMainMapMap ().tileCenterMercator (playerGeoPosition);
+		}
+
 		if(!getMainMapMap ().centerMercator.isEqual(tileCenterMercator)) {
 			Debug.Log (getMainMapMap().centerMercator.ToString() + ", " + tileCenterMercator.ToString());
 
