@@ -23,6 +23,6 @@ public class MenuController : MonoBehaviour {
 	}
 
 	public void Customize () {
-		SceneManager.LoadScene ("customize");
+		SceneManager.LoadScene ("SokobanDemo");
 	}
 }

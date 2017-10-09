@@ -18,6 +18,9 @@ TagManager:
   - Board
   - Lives
   - Score
+  - Map
+  - ObjectOnMap
+  - box
   layers:
   - Default
   - TransparentFX
@@ -30,7 +33,7 @@ TagManager:
   - Enemies
   - CenterObstacle
   - Player
-  - 
+  - Background
   - 
   - 
   - 
@@ -54,4 +57,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1949919545
+    locked: 0
+  - name: Objects
+    uniqueID: 2720503873
     locked: 0
